@@ -2,5 +2,12 @@
     <div class="pokemon-filter">
         Filtrer par: Type
     </div>
-
+<!--    <h1>{{ pokemons | json}}</h1>-->
+    <div class="pokemon-grid">
+       <div class="box" *ngFor="let pokemon of pokemons">
+           <img [src]="pokemon.sprites.front_default" alt="pokemon">
+           <h3>{{ pokemon.name }}</h3>
+           <p> Type: {{ pokemon.types[0].type.name }}</p>
+       </div>
+    </div>
 </div>
