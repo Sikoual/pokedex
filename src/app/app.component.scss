@@ -1,0 +1,25 @@
+menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90vw;
+  margin: 1rem auto;
+  border: 2px solid black;
+  padding: 1rem 2rem;
+  li{
+    list-style: none;
+  }
+  input{
+   width: 300px;
+    padding-left: 1rem;
+  }
+}
+.search-input{
+  position: relative;
+  img{
+    position: absolute;
+    top:2.5px;
+    left:2.5px;
+    width: 15px;
+  }
+}
