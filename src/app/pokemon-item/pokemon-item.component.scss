@@ -1,0 +1,14 @@
+.pokemon-all-stats{
+  display: flex;
+  flex-direction: column;
+}
+.pokemon-stat-name{
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.pokemon-stat-value{
+  font-style: italic;
+  color: darkolivegreen;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
