@@ -1,23 +1,41 @@
-<div class="pokemon-container" *ngFor="let pokemon of currentPokemon">
-    <div class="pokemon-description">
-        <div class="pokemon-id">
-            <h2>{{ pokemon.id}}</h2>
-            <h3>{{ pokemon.name }}</h3>
+<div *ngFor="let pokemon of currentPokemon">
+    <div class="pokemon-container">
+        <div class="pokemon-description">
+            <div class="pokemon-id">
+                <h2>{{ pokemon.id}}</h2>
+                <h3>{{ pokemon.name }}</h3>
+            </div>
+            <div class="pokemon-types">
+                <p>{{ pokemon.types[0].type.name }}</p>
+                <p *ngIf="pokemon.types[1]">{{ pokemon.types[1]?.type.name }}</p>
+            </div>
         </div>
-        <div class="pokemon-types">
-            <p>{{ pokemon.types[0].type.name }}</p>
-            <p *ngIf="pokemon.types[1]">{{ pokemon.types[1]?.type.name }}</p>
+        <div class="pokemon-img">
+            <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
         </div>
-    </div>
-    <div class="pokemon-img" [routerLink]="['pokemon', pokemon.name]">
-        <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
-    </div>
-    <h2>Stats --></h2>
-    <div class="pokemon-stats-container">
-        <div class="pokemon-all-stats" *ngFor="let stats of pokemon.stats">
-            <p class="pokemon-stat-name">{{ stats.stat.name}}</p>
-            <p class="pokemon-stat-value">{{ stats.base_stat}}</p>
+        <h2>Stats --></h2>
+        <div class="pokemon-stats-container">
+            <div class="pokemon-all-stats" *ngFor="let stats of pokemon.stats">
+                <p class="pokemon-stat-name">{{ stats.stat.name}}</p>
+                <p class="pokemon-stat-value">{{ stats.base_stat}}</p>
+            </div>
         </div>
     </div>
 </div>
+
+<div class="pokemon-evolution-container">
+    <h2>Evolutions </h2>
+    <div class="pokemon-evolution">
+        <div *ngFor="let pokemonEvolution of displayEvolutionPokemon">
+            <div>
+                <img [src]='pokemonEvolution' alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
